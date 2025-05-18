@@ -24,6 +24,6 @@ Auth::routes(['register'=>false]); //disabled user registrasion for production
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>'auth'], function(){
-    Route::get('/email', 'SendingEmailController@index');
+    Route::get('/email', 'SendingEmailController@index')->name('email.index');
     Route::post('/email/send', 'SendingEmailController@send')->name('email.send');
 });
